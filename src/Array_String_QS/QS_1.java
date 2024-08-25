@@ -6,7 +6,7 @@ package Array_String_QS;
 public class QS_1 {
 
     public static boolean isUniqueChar(String str) {
-        if(str.length() > 128) {
+        if (str.length() > 128) {
             return false;
         }
 
@@ -26,8 +26,7 @@ public class QS_1 {
         String testString1 = "abcd";
         System.out.println(isUniqueChar(testString1));
         // Output is true
-        
-        
+
         String testString2 = "hello";
         System.out.println(isUniqueChar(testString2));
         // Output is false

@@ -1,4 +1,5 @@
 package Array_String_QS;
+
 import java.util.*;
 
 // Palindrome  Permutation:  Given  a  string,  write  a  function  to  check  if  it  is  a permutation  of  
@@ -11,22 +12,21 @@ import java.util.*;
 
 public class QS_4 {
 
-    public static boolean PalindromePermuation (String theString) {
+    public static boolean PalindromePermuation(String theString) {
         Map<Character, Integer> dict = new HashMap<>();
 
-        for (Character c: theString.toCharArray()) { //Count occurences
+        for (Character c : theString.toCharArray()) { // Count occurences
             if (dict.get(c) == null) {
-                dict.put(c,1);
-            }
-            else {
+                dict.put(c, 1);
+            } else {
                 dict.put(c, dict.get(c) + 1);
             }
         }
 
         int noofOddCount = 0;
 
-        for (Integer val: dict.values()) { //how manay characters have odd count.
-            if (val%2 != 0) {
+        for (Integer val : dict.values()) { // how manay characters have odd count.
+            if (val % 2 != 0) {
                 noofOddCount++;
             }
         }
@@ -42,7 +42,7 @@ public class QS_4 {
         String val2 = "civic";
         String val3 = "rcceaar";
         String val4 = "Hello";
-   
+
         System.out.println(PalindromePermuation(val1));
         System.out.println(PalindromePermuation(val2));
         System.out.println(PalindromePermuation(val3));

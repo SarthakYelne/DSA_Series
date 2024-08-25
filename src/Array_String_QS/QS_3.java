@@ -10,45 +10,44 @@ package Array_String_QS;
 
 public class QS_3 {
 
-public static void replaceSpaces(char[] str, int trueLength) {
-    int index = 0;
-    int i, spacecount = 0;
+    public static void replaceSpaces(char[] str, int trueLength) {
+        int index = 0;
+        int i, spacecount = 0;
 
-    for (i = 0; i < trueLength; i++) {
-        if (str[i] == ' ') {
-            spacecount++;
+        for (i = 0; i < trueLength; i++) {
+            if (str[i] == ' ') {
+                spacecount++;
+            }
+        }
+
+        index = trueLength + spacecount * 2;
+        if (trueLength < str.length) {
+            str[trueLength] = '\0';
+        }
+
+        for (i = trueLength - 1; i >= 0; i--) {
+            if (str[i] == ' ') {
+                str[index - 1] = '0';
+                str[index - 2] = '2';
+                str[index - 3] = '%';
+                index = index - 3;
+            } else {
+                str[index - 1] = str[i];
+                index--;
+            }
         }
     }
 
-    index = trueLength + spacecount * 2;
-    if(trueLength < str.length){
-        str[trueLength] = '\0';
+    public static void main(String[] args) {
+
+        String input = "Mr John Smith    ";
+        int trueLength = 13;
+
+        char[] str = input.toCharArray();
+
+        replaceSpaces(str, trueLength);
+
+        System.out.println("\"" + new String(str) + "\"");
     }
-
-    for (i = trueLength-1; i >= 0; i--) {
-        if (str[i] == ' ' ) {
-            str[index-1] = '0';
-            str[index-2] = '2';
-            str[index-3] = '%';
-            index = index - 3;
-        }
-        else {
-            str[index-1] = str[i];
-            index--; 
-        }
-    }
-}
-
-public static void main(String[] args) {
-
-    String input = "Mr John Smith    ";
-    int trueLength = 13;
-
-    char[] str = input.toCharArray();
-
-    replaceSpaces(str, trueLength);
-
-    System.out.println("\"" + new String(str) + "\"");
-}
 
 }

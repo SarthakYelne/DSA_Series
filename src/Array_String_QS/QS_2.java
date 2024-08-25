@@ -18,11 +18,11 @@ public class QS_2 {
         for (int i = 0; i < t.length(); i++) {
             int c = t.charAt(i);
             letters[c]--;
-            if (letters[c]<0) {
+            if (letters[c] < 0) {
                 return false;
             }
         }
- 
+
         return true;
     }
 
@@ -31,7 +31,7 @@ public class QS_2 {
         String val2 = "god";
 
         System.out.println(permutation(val1, val2));
-        //Output is true
+        // Output is true
 
     }
 }
